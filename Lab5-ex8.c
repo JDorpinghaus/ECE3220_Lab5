@@ -3,15 +3,16 @@
 #include<malloc.h>
 int main(void)
 {
-	char *s, *dyn_s;
+	char *dyn_s;
+	char s[100];
 	int ln;
 	printf("Enter the input string\n");
 	scanf("%s",s);
 	ln = strlen(s);
-	*dyn_s = (char*)malloc(strlen(s)+1);
-	dyn_s = s;
+	dyn_s = (char*)malloc(strlen(s)+1);
+	strcpy(dyn_s, s);
 	dyn_s[strlen(s)]='\0';
-	printf(dyn_s);
+	printf("%s", dyn_s);
 	return 0;
 }
 
